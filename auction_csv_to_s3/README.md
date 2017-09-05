@@ -1,6 +1,4 @@
-# AWS λ-functions
-
-## auction_csv_to_s3
+# auction_csv_to_s3
 
 AWS λ-function to:
 
