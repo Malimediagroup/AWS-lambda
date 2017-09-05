@@ -3,8 +3,8 @@
 #
 #  auction_csv_to_s3.py
 #
-#  Copyleft 2017 Maarten De Schrijver
-#  <http://maartendeschrijver.me>
+#  Copyleft 2017 Mali Media Group
+#  <http://malimedia.be>
 #
 #  This program is free software; you can redistribute it and/or modify
 #  it under the terms of the GNU General Public License as published by
