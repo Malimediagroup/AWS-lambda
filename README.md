@@ -1,6 +1,10 @@
 # AWS λ-functions
 
-## auction_csv_to_s3
+Collection of AWS λ-functions
+
+## Functions
+
+### auction_csv_to_s3
 
 AWS λ-function to:
 
@@ -17,7 +21,7 @@ before starting.
 
 That's all...
 
-## bdm_event_lead_trigger
+### bdm_event_lead_trigger
 
 - is triggered by the arrival of a JSON lead on S3
     (s3://bdm-events/leads/)
@@ -29,3 +33,7 @@ That's all...
     - can add campaign to Campaigns (MySQL) if it doesn't exist
 
 That's all...
+
+## Flowcharts
+
+TODO

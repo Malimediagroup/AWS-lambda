@@ -69,7 +69,7 @@ def decrypt(env_var):
 # Some constants
 MYSQL = {
     'type'        : 'mysql',
-    'host'        : 'mmg-mysql.cmsshmv4vm2j.eu-central-1.rds.amazonaws.com',
+    'host'        : os.environ['MYSQL_HOST'],
     'port'        : 3306,
     'db_name'     : 'mmgmysqldb',
     'db_username' : 'mmgmysqluser',
@@ -109,7 +109,7 @@ def send_out_warning(subject, msg, short_msg=''):
     """Send out a warning through AWS SNS."""
     client = boto3.client('sns', region_name='eu-west-1')
     response = client.publish(
-        TopicArn            = 'arn:aws:sns:eu-west-1:625469223576:AnyFailure',
+        TopicArn            = os.environ['TOPIC_ARN'],
         #~ MessageStructure    = 'json',
         Subject             = subject,
         Message             = msg,
@@ -169,17 +169,6 @@ def mailjet_get(contact_id_or_email, with_data=True,
     elif result.status_code == 400:
         print('Status: %s - Reason: %s', result.status_code, result.reason)
         return False
-
-def mailjet_get_messages(contact_id):
-    """"""
-    filters = {
-        'Contact':  contact_id,
-        'Sort':     'ArrivedAt DESC'
-    }
-    result = Mailjet_Main.message.get(filters=filters)
-    if result.status_code == 200:
-        return result.json()['Data']
-    return False
 
 def get_uuid_and_long(email):
     sql = 'SELECT * FROM `Contacts` WHERE email_cleaned = %s'
