@@ -1,8 +1,16 @@
 # AWS λ-functions
 
-Collection of AWS λ-functions
+Together, these functions perform variuos bussiness process automation tasks.
+Various functions and how they work together are depicted in the flowchart
+below:
+
+![Automation Flowchart](./Syncro_Flow.png)
 
 ## Functions
+
+### auction_csv_to_google
+
+### auction_csv_to_raw_mysql
 
 ### auction_csv_to_s3
 
@@ -21,6 +29,8 @@ before starting.
 
 That's all...
 
+### bdm_event_catcher
+
 ### bdm_event_lead_trigger
 
 - is triggered by the arrival of a JSON lead on S3
@@ -34,6 +44,14 @@ That's all...
 
 That's all...
 
-## Flowcharts
+### clean_auction_csv
 
-TODO
+### csv_load_contacts
+
+### diff_auction_csv
+
+### get_item_from_biedmee
+
+### mj_to_s3
+
+### odoo_loader
