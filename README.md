@@ -4,7 +4,7 @@ Together, these functions perform variuos bussiness process automation tasks.
 Various functions and how they work together are depicted in the flowchart
 below:
 
-![Automation Flowchart](./Syncro_Flow.svg)
+![Automation Flowchart](./Syncro_Flow.png)
 
 ## Functions
 
