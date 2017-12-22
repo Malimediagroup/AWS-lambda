@@ -80,8 +80,6 @@ AWS λ-function to:
 
 That's all...
 
-### csv_load_contacts
-
 ### diff_auction_csv
 
 ### get_item_from_biedmee
