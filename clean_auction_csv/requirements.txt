@@ -1,0 +1,14 @@
+argparse==1.2.1
+boto3==1.4.4
+botocore==1.5.37
+distribute==0.6.24
+docutils==0.13.1
+futures==3.0.5
+jmespath==0.9.2
+python-dateutil==2.6.0
+pytz==2017.2
+requests==2.13.0
+s3transfer==0.1.10
+six==1.10.0
+unicodecsv==0.14.1
+wsgiref==0.1.2

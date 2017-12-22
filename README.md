@@ -10,7 +10,26 @@ below:
 
 ### auction_csv_to_google
 
+AWS λ-function to:
+
+ - get's two files from S3 (triggered by SNS-topic):
+     - s3://bdm-auction-exports/clean_csv/latest.csv
+     - s3://bdm-auction-exports/clean_csv/diff.csv
+ - uploads them to Google Drive as spreadsheets
+
+ That's all...
+
 ### auction_csv_to_raw_mysql
+
+This AWS λ-function:
+
+  - downloads /clean_csv/diff.csv from s3://bdm-auction-export
+  - adds (via REPLACE) these records to `AuctionsRaw`-table on
+    MySQL RDS
+  - is triggered by the arrival of the diff.csv file on S3
+    (via SNS fan-out)
+
+ That's all...
 
 ### auction_csv_to_s3
 
@@ -46,6 +65,21 @@ That's all...
 
 ### clean_auction_csv
 
+AWS λ-function to:
+
+ - get/read today's raw csv from S3
+ - clean it:
+     - format fields (datetime to UTC, strip away chars in OGM, ...)
+     - find and remove bad lines (send out warning)
+     - mark suspicious bids
+ - filter it:
+     - remove rows from own domains and emails
+ - save to S3 on /clean_csv (which will trigger the diff-fn):
+     - rename clean_csv/latest.csv -> clean_csv/yesterday.csv
+     - upload new to clean_csv/latest.csv
+
+That's all...
+
 ### csv_load_contacts
 
 ### diff_auction_csv
@@ -54,4 +88,4 @@ That's all...
 
 ### mj_to_s3
 
-### odoo_loader
+### odoo_loader3
