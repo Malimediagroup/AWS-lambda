@@ -17,8 +17,6 @@ AWS λ-function to:
      - s3://bdm-auction-exports/clean_csv/diff.csv
  - uploads them to Google Drive as spreadsheets
 
- That's all...
-
 ### auction_csv_to_raw_mysql
 
 This AWS λ-function:
@@ -28,8 +26,6 @@ This AWS λ-function:
     MySQL RDS
   - is triggered by the arrival of the diff.csv file on S3
     (via SNS fan-out)
-
- That's all...
 
 ### auction_csv_to_s3
 
@@ -46,9 +42,9 @@ $ source env.secrets
 
 before starting.
 
-That's all...
-
 ### bdm_event_catcher
+
+TODO
 
 ### bdm_event_lead_trigger
 
@@ -60,8 +56,6 @@ That's all...
     - adds to RDS (MySQL: Contacts, ContactsCampaigns)
     - adds to Mailjet, if needed
     - can add campaign to Campaigns (MySQL) if it doesn't exist
-
-That's all...
 
 ### clean_auction_csv
 
@@ -78,12 +72,18 @@ AWS λ-function to:
      - rename clean_csv/latest.csv -> clean_csv/yesterday.csv
      - upload new to clean_csv/latest.csv
 
-That's all...
-
 ### diff_auction_csv
+
+TODO
 
 ### get_item_from_biedmee
 
+TODO
+
 ### mj_to_s3
 
+TODO
+
 ### odoo_loader3
+
+TODO
